@@ -1,0 +1,59 @@
+@import 'assets/css/index.wxss';
+/**app.wxss**/
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0;
+  box-sizing: border-box;
+  padding-bottom: 110rpx;
+} 
+.hide{
+  display: none;
+}
+.show{
+  display: block;
+}
+image{
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.zan-pull-left{
+  float: left;
+}
+.tab-bar{  
+    display: flex;  
+    flex-direction: row;  
+    justify-content: space-around;  
+    position: fixed;  
+    bottom: 0;  
+    left: 0;  
+    z-index: 9;  
+    width: 100%;  
+    padding: 10rpx 0; 
+    border: none;
+    background-color: #fff;
+}  
+.tab-bar .menu-item{  
+    display: flex;  
+    flex-direction: column;  
+    justify-content: center;  
+    align-items: center;  
+    height: 100%;  
+    background: none;
+}    
+.tab-bar .tabbar_icon{  
+    width: 44rpx;  
+    height: 44rpx;  
+}  
+.tab-bar{
+  font-size: 26rpx;
+}
+.zan-dialog--mask{
+  z-index: 9;
+}
+.zan-dialog--show .zan-dialog--container{
+  z-index: 10;
+}

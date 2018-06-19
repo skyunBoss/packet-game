@@ -1,0 +1,38 @@
+<!--record.wxml-->
+<import src="../common/loadmore/index.wxml" />
+<view class="container">
+  <view class='user'>
+    <image class='avatarUrl' src='{{avatarUrl}}'></image>
+    <text class='zan-col zan-col-24'><text class='username'>{{username}}</text>共发出</text>
+    <view class='zan-col zan-col-24'>
+      <view class='zan-col zan-col-10 zan-pull-left'>
+        <text class='zan-col zan-col-24 title' style='text-align: right;'>金额(元)</text>
+        <text class='zan-col zan-col-24 context' style='text-align: right;'>{{total_money}}</text>
+      </view>
+      <view class='zan-col zan-col-10 zan-pull-right'>
+        <text class='zan-col zan-col-24 title' style='text-align: left;'>数量(个)</text>
+        <text class='zan-col zan-col-24 context' style='text-align: left;'>{{total_number}}</text>
+      </view>
+    </view>
+  </view>
+  <view class='list'>
+    <block wx:for="{{list}}">
+      <navigator url="../code/code?id={{item.games_config_id}}&title={{item.title}}"> 
+      <view class="zan-cell">
+          <view class="zan-cell__bd">
+            <view class="zan-cell__text">{{item.title}}</view>
+            <view class="zan-cell__desc">{{item.time}}</view>
+          </view>
+          <view class="zan-cell__ft">
+            <view class="zan-cell__text">{{item.money}}</view>
+            <view class="zan-cell__desc">{{item.surplus_num}}/{{item.number}}</view>
+          </view>
+        </view>   
+      </navigator>   
+    </block>
+    <template is="zan-loadmore" data="{{ loading: hidden }}"></template>
+  </view>
+</view>
+<!--tabBar-->
+<import src="../common/tabBar.wxml"/>  
+<template is="tabBar" data="{{tabBar}}"/>

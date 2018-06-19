@@ -1,0 +1,24 @@
+<!--money.wxml-->
+<view class="container">
+  <text class='zan-col zan-col-24 zan-font-12'>提现金额</text>
+  <view class='money zan-col zan-col-24'>
+    <text class='zan-col zan-col-3 zan-pull-left zan-font-30'>￥</text>
+    <input type='digit'  class='zan-col zan-col-21 zan-pull-left zan-font-30' value='{{inputVal}}' bindinput="getInputVal"></input>  
+  </view>
+  <view class='zan-col zan-col-24 balance'>
+    <text class='zan-pull-left zan-font-12'>零钱余额￥{{money}}，</text>
+    <view class='allMondy zan-pull-left zan-font-12' bindtap='getAllMoney'>全部提现</view>
+  </view>
+  <view class='zan-col zan-col-24 btn'>
+    <button type="primary" bindtap="takeMoney"> 提现 </button>
+    <text class='zan-col zan-col-24 tit'>1-2个工作日到账</text>
+  </view>
+</view>
+<view class='game' bindtap='toGame'>
+  <image src='../../assets/images/go-game.png'></image>
+</view>
+<import src="../common/dialog/index.wxml" />
+<template is="zan-dialog" data="{{ zanDialog }}"></template>  
+<!--tabBar-->
+<import src="../common/tabBar.wxml"/>  
+<template is="tabBar" data="{{tabBar}}"/>

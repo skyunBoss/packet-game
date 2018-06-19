@@ -1,0 +1,22 @@
+<view class='container'> 
+  <canvas canvas-id="shareCanvas" style="width: 750rpx;height:800rpx;z-index: 1;"></canvas> 
+  <canvas canvas-id="show" style="position: absolute;z-index: 2;width: 100%;height:150rpx;top: 630rpx;">
+    <cover-view style='width:100%;height:100%;background-color: #CD553D;'></cover-view>
+  </canvas>
+  <canvas canvas-id="avatar" style="position: absolute;z-index: 2;width: 100rpx;height: 100rpx;left:50%;margin-left: -50rpx;top: 20rpx;">
+    <cover-image style='width: 100rpx;height: 100rpx;border-radius: 5px;' src="{{avatarUrl}}"></cover-image>
+  </canvas>
+  <view class='share_box hide' style='{{loading ? "display: block;" : "display: none;"}}'>
+      <view class='btn_box'>
+        <button class='btn_Btn btn_top' type='primary' open-type="share">
+          转发到好友或着群里
+        </button>
+        <view class='btn_Btn btn_top' style='background: #fff;border:1rpx solid #e5e5e5;color: #333;' bindtap='share'>
+          生成朋友圈分享图
+        </view>
+    </view> 
+  </view>   
+</view>
+
+<import src="../common/toast/index.wxml" />
+<template is="zan-toast" data="{{ zanToast }}"></template>

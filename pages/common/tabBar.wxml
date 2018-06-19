@@ -1,0 +1,13 @@
+<template name="tabBar">  
+  <view class="flex-h flex-hsb tab-bar" style="color: {{tabBar.color}}; background: {{tarBar.backgroundColor}}; {{tabBar.position=='top'? 'top: 0' : 'bottom: 0'}};">  
+  <block wx:for="{{tabBar.list}}" wx:key="pagePath">  
+    <navigator url="{{item.pagePath}}" open-type="reLaunch" class="menu-item zan-col zan-col-6" style="{{item.active? 'color: '+(item.selectedColor? item.selectedColor : tabBar.selectedColor) : ''}}"> 
+      <view class='tabbar_icon'> 
+        <image src="{{item.selectedIconPath}}" wx:if="{{item.active}}"></image>  
+        <image src="{{item.iconPath}}" wx:if="{{!item.active}}"></image>  
+      </view>
+      <text>{{item.text}}</text>
+    </navigator>  
+    </block>  
+  </view>  
+</template>  

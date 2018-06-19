@@ -1,0 +1,231 @@
+page{
+  width: 100%;
+  height: 100%;
+}
+.container{
+  padding: 0;
+}
+button{
+  border: none;
+}
+button::after{
+  content: none;
+}
+.game-bg{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 1;
+}
+.game-bg image{
+  width: 100%;
+  height: 100%;
+}
+.icon1{
+  position: absolute;
+  z-index: 3;
+  width: 81rpx;
+  height: 113rpx;
+  top: 26%;
+  left: 0;
+}
+.icon2{
+  position: absolute;
+  z-index: 3;
+  width: 81rpx;
+  height: 113rpx;
+  top: 78%;
+  left: 0;  
+}
+.tit{
+  position: absolute;
+  z-index: 2;
+  height: 50rpx;
+  line-height: 50rpx;
+  background-color: rgba(0, 0, 0, 0.3);
+  left: 50%;
+  top: 29%;
+  margin-left: -25%;
+  border-radius: 15px;
+  color: #fff;
+  font-size: 24rpx;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.center{
+  position: absolute;
+  z-index: 2;
+  width: 620rpx;
+  height: 620rpx;
+  left: 50%;
+  margin-left: -310rpx;
+  top: 340rpx;
+}
+.center image{
+  position: absolute;
+  z-index: 1;
+}
+.center .grid{
+  z-index: 2;
+  position: absolute;
+  padding: 58rpx;
+}
+.center .grid .grid_btn{
+  width: 232rpx;
+  height: 232rpx;
+  float: left;
+}
+.center .grid .last{
+  position: absolute;
+  top: 310rpx;
+  left: 58rpx;
+}
+.center .grid .packet{
+  width: 28rpx;
+  height: 36rpx;
+  display: none;
+  position: absolute;
+  z-index: 2;
+  right: -5rpx;
+  top: 20rpx;
+}
+.center .grid .packet.show{
+  display: block;
+}
+.center .grid view{
+  width: 106rpx;
+  height: 106rpx;
+  margin: 10rpx;
+  background-image: url("//24haowan-cdn.shanyougame.com/dingzhi/grid-lottery/grid-bg.png");
+  background-size: 100% 100%;
+  float: left;
+  position: relative;
+}
+.center .grid view.overflow{
+  width: 100%;
+  overflow: hidden;
+  background: none;
+  height: auto;
+  margin: 0;
+}
+.center .grid view.left{
+  overflow: hidden;
+  background: none;
+  height: auto;
+  margin: 0;
+  width: 126rpx;
+}
+.center .grid view image{
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.center .grid view.active{
+  background-image: url("//24haowan-cdn.shanyougame.com/dingzhi/grid-lottery/grid-bg-active.png");  
+}
+.winning{
+  position: absolute;
+  bottom: 36rpx;
+  font-size: 30rpx;
+  color: #fff;
+  width: 302rpx;
+  height: 82rpx;
+  line-height: 82rpx;
+  left: 48%;
+  margin-left: -151rpx;
+  text-align: center;
+  z-index: 6;
+}
+.zan-dialog .close{
+  position: absolute;
+  top: 140rpx;
+  right: 60rpx;
+  z-index: 11;
+  color: #fd4342;
+  font-size: 40rpx;
+}
+.successDialog .zan-dialog--container{
+  width: 622rpx;
+  height: 875rpx;
+  position: absolute;
+  background: none;
+}
+.successDialog .zan-dialog--container .money{
+    color: #e04538;
+    position: absolute;
+    top: 260rpx;
+    width: 434rpx;
+    left: 50%;
+    margin-left: -217rpx;
+    text-align: center;
+    font-size: 100rpx;  
+}
+.successDialog .zan-dialog--container .money text{
+  font-size: 50rpx;
+  margin: 0 0 0 10rpx;
+}
+.takeMoney,.onceMore,.nonePacket{
+  position: absolute;
+  width: 520rpx;
+  height: 69rpx;
+  bottom: 0;
+  left: 50%;
+  margin-left: -260rpx;
+  background: none; 
+}
+.zan-dialog--mask{
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.errorDialog .zan-dialog--container,.noneDialog .zan-dialog--container,.shareDialog .zan-dialog--container{
+  width: 624rpx;
+  height: 754rpx;
+  background: none;
+}
+.zan-dialog--hide{
+  display: none;
+}
+.errorDialog .zan-dialog--container{
+  height: 844rpx;
+}
+.shareDialog .zan-dialog--container{
+  height: 845rpx;
+}
+.errorDialog .takeMoney{
+  left: 51%;
+}
+.cashMoney{
+    position: absolute;
+    right: 22px;
+    bottom: -30rpx;
+    transform: translate3d(50%, -200%);
+    -webkit-transform: translate3d(50%, -200%, 0);
+    transition: all linear 0.1s;
+    -webkit-transition: all linear 0.1s;
+    width: 80rpx;
+    height: 80rpx;
+    z-index: 1;
+    border-radius: 30px;
+    box-shadow: 0 0 3px 5px white; 
+    animation-name: bling;
+    animation-duration: 0.6s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;    
+}
+@keyframes bling {
+  from {
+    box-shadow: 0 0 3px 5px white; 
+  }
+  to {
+    box-shadow: 0 0 3px 2px white; 
+  } 
+}
+@-webkit-keyframes bling {
+  from {
+    box-shadow: 0 0 3px 5px white;
+  }
+  to {
+    box-shadow: 0 0 3px 2px white; 
+  } 
+}

@@ -1,0 +1,36 @@
+page{
+  background-color: #FD5042;
+}
+.container{
+  padding: 0;
+}
+.recordTitle{
+  width: 100%;
+  height: 324rpx;
+  float: left
+}
+.list{
+  background-color: #FFF5E9;
+  border-radius: 10px;
+  margin: 40rpx 40rpx;
+  position: relative;
+}
+.list .overflow{
+  padding: 15rpx 20rpx;
+  line-height: 80rpx;
+  position: relative;
+}
+.list image{
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 5px;
+}
+.list text{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  line-height: 80rpx;
+  font-size: 30rpx;
+  color: #333;
+  text-align: center;
+}

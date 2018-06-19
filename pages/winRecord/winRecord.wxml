@@ -1,0 +1,13 @@
+<view class="container">
+  <view class='recordTitle'>
+     <image src='../../assets/images/recordTitle.png'></image>  
+  </view>
+  <view class='list'>
+    <view class='overflow zan-col zan-col-24' wx:for="{{list}}">
+      <image src='{{item.avatarUrl}}' class="zan-col zan-col-6"></image>
+      <text class='zan-col zan-col-6'>{{item.username}}</text>
+      <text class='zan-col zan-col-6'>{{item.money}}</text>
+      <text class='zan-col zan-col-8'>{{item.time}}</text>
+    </view> 
+  </view>
+</view>

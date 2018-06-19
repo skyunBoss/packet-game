@@ -1,0 +1,164 @@
+<view class="container">
+  <view class='logo'>
+    <image src='../../assets/images/logo.png'></image>
+  </view>
+  <view class='rule' bindtap='openRule'>
+    <image src='../../assets/images/rule.png'></image>
+  </view>
+  <view class='money-bg'>
+    <image src='../../assets/images/money-bg.png'></image>
+    <text>我的红包余额：{{balance}}元</text>
+  </view>
+  <view class='center'>
+    <image src='{{centerbg}}'></image>
+    <view class='grid'>
+      <view class='overflow'>
+        <view class="{{index == 0 ? 'active' : ''}}">
+          <view class='packet {{moneyLocation == 0 ? "show" : ""}}'>
+            <image src='../../assets/images/packet.png'></image>
+          </view>
+          <image src="{{list[0].pic}}"></image>
+        </view>
+        <view class="{{index == 1 ? 'active' : ''}}">
+          <view class='packet {{moneyLocation == 1 ? "show" : ""}}'>
+            <image src='../../assets/images/packet.png'></image>
+          </view>
+          <image src="{{list[1].pic}}"></image>
+        </view>
+        <view class="{{index == 2 ? 'active' : ''}}">
+          <view class='packet {{moneyLocation == 2 ? "show" : ""}}'>
+            <image src='../../assets/images/packet.png'></image>
+          </view>
+          <image src="{{list[2].pic}}"></image>
+        </view>
+        <view class="{{index == 3 ? 'active' : ''}}">
+          <view class='packet {{moneyLocation == 3 ? "show" : ""}}'>
+            <image src='../../assets/images/packet.png'></image>
+          </view>
+          <image src="{{list[3].pic}}"></image>
+        </view>
+      </view>
+      <view class='overflow'>
+        <view class='zan-pull-left left'>
+          <view class="{{index == 11 ? 'active' : ''}}">
+            <view class='packet {{moneyLocation == 11 ? "show" : ""}}'>
+              <image src='../../assets/images/packet.png'></image>
+            </view>
+            <image src="{{list[11].pic}}"></image>
+          </view>
+          <view class="{{index == 10 ? 'active' : ''}}">
+            <view class='packet {{moneyLocation == 10 ? "show" : ""}}'>
+              <image src='../../assets/images/packet.png'></image>
+            </view>
+            <image src="{{list[10].pic}}"></image>
+          </view>  
+        </view>               
+        <view class='grid_btn' style='background-image: url({{btnTouchBg}})' bindtouchstart="touchStart" bindtouchend="touchEnd"></view>
+        <view class='zan-pull-left left'>
+          <view class="{{index == 4 ? 'active' : ''}}">
+            <view class='packet {{moneyLocation == 4 ? "show" : ""}}'>
+              <image src='../../assets/images/packet.png'></image>
+            </view>
+            <image src="{{list[4].pic}}"></image>
+          </view>
+          <view class="{{index == 5 ? 'active' : ''}}">
+            <view class='packet {{moneyLocation == 5 ? "show" : ""}}'>
+              <image src='../../assets/images/packet.png'></image>
+            </view>
+            <image src="{{list[5].pic}}"></image>
+          </view>
+        </view>
+      </view>
+      <view class='overflow'>
+        <view class="{{index == 9 ? 'active' : ''}}">
+          <view class='packet {{moneyLocation == 9 ? "show" : ""}}'>
+            <image src='../../assets/images/packet.png'></image>
+          </view>
+          <image src="{{list[9].pic}}"></image>
+        </view>
+        <view class="{{index == 8 ? 'active' : ''}}">
+          <view class='packet {{moneyLocation == 8 ? "show" : ""}}'>
+            <image src='../../assets/images/packet.png'></image>
+          </view>
+          <view class='packet'>
+            <image src='../../assets/images/packet.png'></image>
+          </view>
+          <image src="{{list[8].pic}}"></image>
+        </view>
+        <view class="{{index == 7 ? 'active' : ''}}">
+          <view class='packet {{moneyLocation == 7 ? "show" : ""}}'>
+            <image src='../../assets/images/packet.png'></image>
+          </view>
+          <image src="{{list[7].pic}}"></image>
+        </view>
+        <view class="{{index == 6 ? 'active' : ''}}">
+          <view class='packet {{moneyLocation == 6 ? "show" : ""}}'>
+            <image src='../../assets/images/packet.png'></image>
+          </view>
+          <image src="{{list[6].pic}}"></image>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='zan-col zan-col-24 btn'>
+      <view class='zan-pull-left' bindtap='nonePacket'><image src='../../assets/images/game-btn-bg.png'></image><text>我要发包</text></view>
+      <view class='zan-pull-right' bindtap='cashMoney'><image src='../../assets/images/game-btn-bg.png'></image><text>我要提现</text></view>
+  </view>
+   <view class='winning'>
+    <image src='../../assets/images/game-select.png'></image>
+    <button bindtap='winRecord'>查看中奖名单</button>
+   </view> 
+   <audio src="https://24haowan-cdn.shanyougame.com/dingzhi/grid-lottery/bg.mp3" id="audioBg" loop></audio> 
+   <audio src="https://24haowan-cdn.shanyougame.com/dingzhi/grid-lottery/fail.mp3" id="fail"></audio>
+   <audio src="https://img-2.24haowan.shanyougame.com/music/17982/179821508827858.mp3" id="run"></audio>  
+  <!--rule context-->
+  <view class='zan-dialog ruleContext {{ruleContext ? "zan-dialog--show" : "zan-dialog--hide"}}'>
+    <view class='zan-dialog--mask'></view>
+    <view class='zan-icon zan-icon-close close' bindtap='closeDialog' data-type="rule"></view>
+    <view class='zan-dialog--container'>
+      <image src='../../assets/images/rule-context.png'></image>
+      <view bindtap='onceMore' class='takeMoney' style='bottom: 90rpx;'></view>
+      <view bindtap='takeMoney' class='takeMoney'></view>
+    </view>
+  </view>
+  <!--success-->
+  <view class='zan-dialog successDialog {{successDialog ? "zan-dialog--show" : "zan-dialog--hide"}}'>
+    <view class='zan-dialog--mask'></view>
+    <view class='zan-icon zan-icon-close close' bindtap='closeDialog' data-type="success"></view>
+    <view class='zan-dialog--container'>
+      <image src='../../assets/images/success.png'></image>
+      <view class='money'>{{money}}<text>元</text></view>
+      <button bindtap='takeMoney' class='takeMoney' style='bottom: 92rpx;'></button>
+      <button bindtap='cashMoney' class='takeMoney'></button>
+    </view>
+  </view>
+  <!--fail-->
+  <view class='zan-dialog errorDialog {{errorDialog ? "zan-dialog--show" : "zan-dialog--hide"}}'>
+    <view class='zan-dialog--mask'></view>
+    <view class='zan-icon zan-icon-close close' bindtap='closeDialog' data-type="fail"></view>
+    <view class='zan-dialog--container'>
+      <image src='../../assets/images/error.png'></image>
+      <view bindtap='onceMore' class='takeMoney' style='bottom: 90rpx;'></view>
+      <view bindtap='takeMoney' class='takeMoney'></view>
+    </view>
+  </view>
+  <!--none-->
+  <view class='zan-dialog noneDialog {{noneDialog ? "zan-dialog--show" : "zan-dialog--hide"}}'>
+    <view class='zan-dialog--mask'></view>
+    <view class='zan-icon zan-icon-close close' bindtap='closeDialog' data-type="none"></view>
+    <view class='zan-dialog--container'>
+      <image src='../../assets/images/none.png'></image>
+      <button bindtap='nonePacket' class='nonePacket'></button>
+    </view>
+  </view>   
+  <!--share-->
+  <view class='zan-dialog shareDialog {{shareDialog ? "zan-dialog--show" : "zan-dialog--hide"}}'>
+    <view class='zan-dialog--mask'></view>
+    <view class='zan-icon zan-icon-close close' bindtap='closeDialog' data-type="share"></view>
+    <view class='zan-dialog--container'>
+      <image src='../../assets/images/share.png'></image>
+      <button bindtap='takeMoney' class='nonePacket' style='bottom: 90rpx;'></button>
+      <view bindtap='nonePacket' class='takeMoney'></view>
+    </view>
+  </view>      
+</view>

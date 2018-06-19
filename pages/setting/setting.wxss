@@ -1,0 +1,145 @@
+/**game.wxss**/
+page{
+  background-color: #f2f2f2;
+}
+.container{
+  margin: 40rpx 30rpx;
+  background-color: #fff;
+  padding: 20rpx 50rpx; 
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 2px 8px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.3) 0px 2px 8px;
+  border-radius: 5px;
+}
+.type{
+  border:1px solid #dadada;
+  font-size: 30rpx;
+  color: #dadada;
+  text-align: center;
+  height: 60rpx;
+  line-height: 60rpx;
+}
+.type.active{
+  background-color: #d95940;
+  color: #fff;
+  border-color: #d95940;
+}
+.title{
+  height: 60rpx;
+  line-height: 60rpx;
+}
+input{
+  height: 60rpx;
+  line-height: 60rpx;
+  border-bottom: 1px solid #dadada;
+  color: #000;
+}
+.mar-bottom-30{
+  margin-bottom: 20rpx;
+}
+.mar-bottom-20{
+  margin-bottom: 20rpx;
+}
+.list image{
+  width: 100%;
+  height: 88%;
+  border-radius: 50%;
+}
+.list .img{
+  padding: 0 15rpx;
+  float: left;
+  height: 100rpx;
+  display: flex;
+  align-items: center;  
+  justify-content: center;
+}
+.list .img.active{
+  border: 1px solid #d95940;
+  background-color: #d95940;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.submit{
+  height: 80rpx;
+  line-height: 80rpx;
+  color: #fff;
+  font-size: 28rpx;
+  background-color: #d95940;
+  text-align: center;
+  margin: 10rpx auto 30rpx auto;
+  border-radius: 30px;
+}
+.rule{
+    position: absolute;
+    left: -20px;
+    bottom: 0;
+    transform: translate3d(50%, -200%);
+    -webkit-transform: translate3d(50%, -200%, 0);
+    transition: all linear 0.1s;
+    -webkit-transition: all linear 0.1s;
+    width: 100rpx;
+    height: 100rpx;
+    z-index: 1;
+    border-radius: 30px;
+    box-shadow: 0 0 3px 5px white; 
+    animation-name: bling;
+    animation-duration: 0.6s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;    
+}
+.game{
+    position: absolute;
+    right: 60rpx;
+    bottom: 0;
+    transform: translate3d(50%, -200%);
+    -webkit-transform: translate3d(50%, -200%, 0);
+    transition: all linear 0.1s;
+    -webkit-transition: all linear 0.1s;
+    width: 100rpx;
+    height: 100rpx;
+    z-index: 1;
+    border-radius: 30px;
+    box-shadow: 0 0 3px 5px white; 
+    animation-name: bling;
+    animation-duration: 0.6s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;    
+}
+.rule image,.game image{
+  display: block;
+  width: 100%;
+  height: 100%;  
+}
+.zan-dialog--show .zan-dialog--mask{
+  z-index: 99;
+}
+.zan-dialog--show .zan-dialog--container{
+  z-index: 100;
+}
+.zan-dialog__content--title{
+  text-align: center;
+}
+.select{
+  width: 28rpx;
+  height: 28rpx;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  margin-top: -16rpx;
+  z-index: 9;
+}
+@keyframes bling {
+  from {
+    box-shadow: 0 0 3px 5px white; 
+  }
+  to {
+    box-shadow: 0 0 3px 2px white; 
+  } 
+}
+@-webkit-keyframes bling {
+  from {
+    box-shadow: 0 0 3px 5px white;
+  }
+  to {
+    box-shadow: 0 0 3px 2px white; 
+  } 
+}

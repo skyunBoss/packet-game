@@ -1,0 +1,44 @@
+/**record.wxss**/
+page{
+  background-color: #f2f2f2;
+}
+.user .avatarUrl{
+  width: 140rpx;
+  height: 140rpx;
+  border-radius: 50%;
+  margin: 40rpx auto 0 auto;
+}
+.user text{
+  font-size: 34rpx;
+  text-align: center;
+  margin: 60rpx 0;
+}
+.user text text{
+  margin: 0 20rpx 0 0;
+  color: #59647a;
+}
+.user .title{
+  font-size: 26rpx;
+  color: #878787;  
+  margin: 0;
+}
+.user .context{
+  font-size: 40rpx;
+  color: #333;  
+  margin: 20rpx 0;  
+}
+.list{
+  margin: 20rpx 0 0 0;
+}
+.list .zan-cell{
+  background-color: #fff;
+}
+.list .zan-cell__text{
+  color: #333;
+  font-size: 26rpx;
+  height: 24px;
+  overflow: hidden;
+}
+.list .zan-cell__desc{
+  font-size: 22rpx;
+}

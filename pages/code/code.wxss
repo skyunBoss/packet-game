@@ -1,0 +1,81 @@
+page{
+  background-color: #CD553D;
+}
+.con{
+  overflow: hidden;
+}
+.share_box{
+  width:690rpx;
+  margin-left:30rpx;
+  display: flex;
+  justify-content: space-around;
+}
+.header_logo{
+  border-radius:15rpx;
+}
+.kouling{
+  width:690rpx;
+  height:60rpx;
+  line-height: 60rpx;
+  font-size:30rpx;
+  color:#fde2b3;
+  text-align: center;
+}
+.yuyin{
+  width:690rpx;
+  height:136rpx;
+  line-height:136rpx;
+  font-size:48rpx;
+  color:#fde2b3;
+  display: flex;
+  justify-content: space-around;
+  vertical-align: middle;
+}
+.juhuama{
+  width:245rpx;
+  height:245rpx;
+  border-radius:50%;
+}
+.share_box_ju{
+  width:690rpx;
+  border-radius:50%;
+  display: flex;
+  padding-left:30rpx;
+  justify-content: space-around;
+}
+.marginTop{
+  margin-top:45rpx;
+}
+.btn_box{
+  padding:20rpx 0 30rpx 0;
+  width:690rpx;
+  height:240rpx;
+  background:#fff;
+  border-radius:15rpx;
+}
+.btn_Btn{
+  width:625rpx;
+  height:80rpx;
+  text-align:center;
+  line-height: 80rpx;
+  font-size:28rpx;
+  background:#31bd48;
+  color:#fff;
+  margin:15rpx auto;
+  border-radius:15rpx;
+}
+.btn_Btn button{
+  font-size:28rpx;
+  height:80rpx;
+  line-height: 80rpx;
+}
+.btn_top{
+  margin-top:30rpx;
+}
+.btn_Shi{
+  width:625rpx;
+  height:80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  margin-top:30rpx;
+}

@@ -1,0 +1,16 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/setting/setting",
+    "pages/code/code",
+    "pages/money/money",
+    "pages/record/record",
+    "pages/winRecord/winRecord"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#d95940",
+    "navigationBarTitleText": "十二生肖",
+    "navigationBarTextStyle":"white"
+  }
+}

@@ -1,0 +1,65 @@
+<!--game.wxml-->
+<import src="../common/dialog/index.wxml" />
+<view class="container">
+  <view class='zan-col zan-col-24 mar-bottom-30'>
+    <view class='zan-col zan-col-7 zan-font-16 zan-c-black zan-pull-left title'>设置标题</view>
+    <view class='zan-col zan-col-17 zan-pull-right' style='position: relative'>
+      <input placeholder="填写游戏标题" class='zan-font-16' type="text" bindinput="getTitle" value='{{title}}' style='padding-right: 30rpx;' maxlength="40"></input>
+      <view class='select' bindtap='listenerButton'>
+        <image src='../../assets/images/select.png'></image>
+      </view>
+    </view>
+  </view>
+  <view class='zan-col zan-col-24 mar-bottom-30'>
+    <view class='zan-col zan-col-7 zan-font-16 zan-c-black zan-pull-left title'>设置难度</view>
+    <view class='zan-col zan-col-17 zan-pull-right' style='position: relative'>
+      <block wx:for="{{type}}" wx:for-index="index">
+        <view class='type zan-col zan-col-6 {{activeType == index ? "active" : ""}}' bindtap='toogleType' data-index="{{index}}" data-point="{{item.point}}">{{item.name}}</view>
+      </block>
+    </view>
+  </view>  
+  <view class='zan-col zan-col-24 mar-bottom-20'>
+    <view class='zan-col zan-col-7 zan-font-16 zan-c-black zan-pull-left title'>生肖({{activeName}})</view>
+    <view class='zan-col zan-col-17 zan-pull-right list'>
+      <block wx:for="{{list}}" wx:for-index="index">
+        <view class='zan-col zan-col-6 img {{activeIndex == index ? "active" : ""}}' bindtap='toogle' data-name="{{item.name}}" data-index="{{index}}" data-id="{{item.goods_id}}">
+          <image src='{{item.pic}}' mode='scaleToFill' class='zan-pull-left'></image>
+        </view>
+      </block>
+    </view>
+  </view>
+  <view class='zan-col zan-col-24 mar-bottom-30'>
+    <view class='zan-col zan-col-7 zan-font-16 zan-c-black zan-pull-left title'>赏金(元)</view>
+    <view class='zan-col zan-col-17 zan-pull-right'>
+      <input placeholder="填写金额" class='zan-font-16' type="number" bindinput="getMoney"></input>
+    </view>
+  </view>
+  <view class='zan-col zan-col-24' style='margin-bottom: 10rpx;'>
+    <view class='zan-col zan-col-7 zan-font-16 zan-c-black zan-pull-left title'>数量(个)</view>
+    <view class='zan-col zan-col-17 zan-pull-right'>
+      <input placeholder="填写数量" class='zan-font-16' type="number" bindinput="getNum"></input>
+    </view>
+  </view>
+  <view class='zan-col zan-col-24'>
+    <view class='zan-col zan-col-7'></view>
+    <text class='zan-col zan-col-17 zan-pull-right zan-font-14' style='color: #ccc;'>需支付2%服务费</text>
+  </view>
+  <view class='submit zan-col zan-col-24' bindtap='submit'>{{buttonName}}</view>
+</view>
+<view class='rule' bindtap='ruleDialog'>
+  <image src='../../assets/images/icon-giftcenter.png'></image>
+</view>
+<view class='game' bindtap='toGame'>
+  <image src='../../assets/images/go-game.png'></image>
+</view>
+<template is="zan-dialog" data="{{ zanDialog }}"></template>
+<!--tabBar-->
+<import src="../common/tabBar.wxml"/>  
+<template is="tabBar" data="{{tabBar}}"/>  
+<action-sheet hidden="{{actionSheetHidden}}" bindchange="listenerActionSheet" >
+    <block wx:for-items="{{actionSheetItems}}" > 
+        <action-sheet-item bindtap="bindItemTap" data-title="{{item}}">{{item}}</action-sheet-item>
+    </block>
+    <!--自动隐藏action-sheet-->
+    <action-sheet-cancel>取消</action-sheet-cancel>
+</action-sheet>

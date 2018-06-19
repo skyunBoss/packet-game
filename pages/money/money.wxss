@@ -1,0 +1,66 @@
+/**money.wxss**/
+page{
+  background-color: #f2f2f2;
+}
+.container{
+  margin: 50rpx 30rpx;
+  background-color: #fff;
+  padding: 60rpx 50rpx; 
+  border-radius: 5px;
+}
+.money{
+  margin: 40rpx 0 40rpx 0;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 20rpx;
+}
+.money input{
+  height: 80rpx;
+  line-height: 80rpx;
+}
+.balance text{
+  color: #878787;
+}
+.balance view{
+  color: #59647a;
+}
+.btn{
+  margin: 40rpx 0 0 0;
+}
+.zan-dialog--show .zan-dialog--mask{
+  z-index: 99;
+}
+.zan-dialog--show .zan-dialog--container{
+  z-index: 100;
+}
+.zan-dialog__content--title{
+  text-align: center;
+}
+.tit{
+  text-align: center;
+  font-size: 12px;
+  color: #878787;
+  margin-top: 10rpx;
+}
+.game{
+    position: absolute;
+    right: 60rpx;
+    bottom: 0;
+    transform: translate3d(50%, -200%);
+    -webkit-transform: translate3d(50%, -200%, 0);
+    transition: all linear 0.1s;
+    -webkit-transition: all linear 0.1s;
+    width: 100rpx;
+    height: 100rpx;
+    z-index: 1;
+    border-radius: 30px;
+    box-shadow: 0 0 3px 5px white; 
+    animation-name: bling;
+    animation-duration: 0.6s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;    
+}
+.game image{
+  display: block;
+  width: 100%;
+  height: 100%;  
+}
